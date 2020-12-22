@@ -1,0 +1,32 @@
+.books-table {
+    border: none;
+}
+
+.chapter-list li {
+    font-family: Impact;
+    color: rgb(197, 56, 31);
+    font-size: 18px;
+}
+
+.chapter-list li:hover {
+    opacity: 75%;
+    cursor: pointer;
+    color: #874be7;
+    font-size: 19px;
+}
+
+.main h1 {
+    font-size: 25px;
+    color: teal;
+    font-family: Calibri;
+}
+
+.main th {
+    font-family: Calibri;
+    font-size: 22px;
+}
+
+.main td {
+    font-family: Calibri;
+    font-size: 18px;
+}
