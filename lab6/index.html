@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab6</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="/resources/demos/external/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script>
+  $( function() {
+    var spinner = $( "#spinner" ).spinner();
+ 
+    $( "#disable" ).on( "click", function() {
+      if ( spinner.spinner( "option", "disabled" ) ) {
+        spinner.spinner( "enable" );
+      } else {
+        spinner.spinner( "disable" );
+      }
+    });
+    $( "#destroy" ).on( "click", function() {
+      if ( spinner.spinner( "instance" ) ) {
+        spinner.spinner( "destroy" );
+      } else {
+        spinner.spinner();
+      }
+    });
+    $( "#getvalue" ).on( "click", function() {
+      alert( spinner.spinner( "value" ) );
+    });
+    $( "#setvalue" ).on( "click", function() {
+      spinner.spinner( "value", 5 );
+    });
+ 
+    $( "button" ).button();
+  } );
+  </script>
+  <style>
+    * {
+        outline: none;
+    }
+
+    .list h3 {
+        color: #29a2ad;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .list ul {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .first-form legend {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .first-form fieldset {
+        border: 7.5px solid #32D4E2;
+        border-radius: 20px;
+        color: #29a2ad;
+    }
+    
+    .auth input {
+        border: 3px solid rgb(98, 228, 221);
+        padding-right: 10%;
+        padding-top: 1%;
+        border-radius: 5px;
+        margin-top: 0.5%;
+        width: 17%;
+    }
+
+    .auth input::-webkit-input-placeholder { color: #99d3d8; }
+
+    .auth input:hover::placeholder { color: seagreen; }
+
+    .auth input::after::placeholder { color: seagreen; }
+
+    .auth-continue {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .auth-continue input {
+        color: #32D4E2;
+    }
+
+    .auth-continue label {
+        color: #32D4E2;
+    }
+
+    .auth-continue select {
+        color: #208f99;
+        font-weight: bold;
+        border: #32d4e2;
+    }
+
+    .name_input {
+        color: #208f99;
+        font-family: arial;
+    }
+        
+    
+
+    .button-1 {
+        display: inline-flex;
+        align-items: center;
+        font-size: 12px;
+        letter-spacing: .05em;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        font-family: 'Montserrat', sans-serif;
+        color:  #1f848d;
+        background: white;
+        border: 1px solid;
+        cursor: pointer;
+        transition: .3s linear;
+    }
+
+    .button-1:hover {
+        background: #91ebf7;
+    }
+
+    .button-1:after {
+        content: "\e82e";
+        font-family: Linearicons-Free;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 16px;
+        margin-left: 30px;
+        padding-left: 20px;
+        border-left: 1px solid;
+    }
+
+    .checkbox {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .another-info p {
+        color: #208f99;
+        font-family: arial;
+    }
+
+    .another-info p textarea{
+        color: #208f99;
+        font-family: arial;
+        width: 30%;
+        height: 30px;
+        border: 3px solid  #91ebf7; 
+        margin-top: 0.5%;
+        border-radius: 4pt;
+        font-size: 20px;  
+    }
+
+    .btn-2 {
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        color: rgb(199, 199, 199);
+        background: red;
+        padding-right: 10.5%;
+        font-weight: 600;
+        border-radius: 7px;
+    }
+
+    .btn-2:hover {
+        background: rgb(238, 238, 238);
+        color: rgb(117, 117, 117);
+    }
+
+    .btn-2::after {
+        background: rgb(238, 238, 238);
+        color: rgb(117, 117, 117);
+        cursor: context-menu;
+    }
+
+    
+
+
+  </style>
+</head>
+<body>
+    <form class="first-form">
+        <fieldset>
+            <legend>Это список</legend>
+            <div class="list">
+                <h3>Список сортов яблок</h3>
+                <ul>
+                    <li>Орловим</li>
+                    <li>Чудное</li>
+                    <li>Балтика</li>
+                    <li>Антоновка</li>
+                    <li>Скала</li>
+                    <li>Успенское</li>
+                    <li>Белорусское сладкое</li>
+                    <li>Брянское</li>
+                </ul>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Регистрация</legend>
+            <div class="auth">
+                <input type="text" id="firstname" placeholder="Введите имя"><br>
+                <input type="text" id="lastname" placeholder="Введите фамилию"><br>
+                <input type="password" id="pass" placeholder="Введите пароль"><br>
+                <input type="password" id="pass-check" placeholder="Подтвердите пароль"><br>
+                <input type="email" id="email" placeholder="Введите электронную почту"><br><br>
+            </div>
+            <div class="auth-continue">
+                <p>
+                    <label for="spinner">Введите Ваш возраст:</label>
+                    <input id="spinner" name="value">
+                </p>
+                <p>
+                    <label>
+                        Пол 
+                    </label><br><br>
+                    <input type="radio" name="sex" value="муж" checked>муж<br>
+                    <input type="radio" name="sex" value="жен">жен<br>
+                </p><br>
+                
+                <p>
+                    <label for="country">Cтрана</label>
+                    <select name="country">
+                        <option>Выберите страну проживания</option>
+                        <option value="хорошо">Россия</option>
+                        <option value="okay">сша</option>
+                        <option value="что_то_на_китайском">любая страна азии</option>
+                    </select>
+                </p>
+            </div>
+        </fieldset><br>
+        <fieldset>
+            <legend>Больше о Вас</legend>
+            <div class="another-info">
+                <p class="name_input"> Сложные предметы: </p>
+                <div class="check_input">
+                    <input type="checkbox" class="checkbox"/>РИП <br>
+                    <input type="checkbox" class="checkbox"/>ОС <br>
+                    <input type="checkbox" class="checkbox"/>ТУ<br>
+                    <input type="checkbox" class="checkbox"/>СТ <br>
+                    <input type="checkbox" class="checkbox"/>ОАД <br>
+                    <input type="checkbox" class="checkbox"/>ВСАСОИУ <br>
+                    <input type="checkbox" class="checkbox"/>ФИЗ-РА <br>
+                    <input type="checkbox" class="checkbox"/>АНГЛ <br>
+                </div><br>
+                <p>
+                    <label>Пару слов о Вас</label><br>
+                    <textarea name="bank"></textarea>
+                </p>
+                <button type="submit" class="button-1">Зарегистрироваться</button>
+                <button type="submit" class="btn-2">Подписаться</button>
+            </div>
+        </fieldset>
+        <br>
+    </form>
+</body>
+</html>
