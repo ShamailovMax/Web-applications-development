@@ -1,2 +1,2 @@
 # Web-applications-development
-## University repository
+### educational repository (University)
